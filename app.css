@@ -1,0 +1,142 @@
+    /* Estilo do fundo com bolhas */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: #0c192c;
+    overflow: hidden; /* Adicione overflow: hidden para impedir a barra de rolagem */
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.bolhas{
+    position: absolute;
+    display: flex;
+    bottom: 0; /* Posiciona as bolhas na parte inferior */
+    left: 0; /* Posiciona as bolhas no lado esquerdo */
+    width: 100%; /* Ajusta a largura das bolhas para ocupar toda a tela */
+}
+
+.bolhas span{
+    width: 30px;
+    height: 30px;
+    background: #e5ff00;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #e5ff0044,
+        0 0 50px #e5ff0044,
+        0 0 100px #e5ff0044;
+    animation: animar calc(90s / var(--i)) linear infinite;
+}
+
+@keyframes animar{
+    0% {
+        transform: translateY(100vh)  scale(0);
+    }
+    100% {
+        transform: translateY(-10vh)  scale(1); 
+    }
+}
+
+.bolhas span:nth-of-type(even){
+    background:  #2dc3ff;
+      box-shadow: 0 0 0 10px #e5ff0044,
+        0 0 50px #2dc3ff,
+        0 0 100px #2dc3ff;
+}
+
+.container-2 {
+    position: absolute; /* Posiciona o container do jogo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    z-index: 1; /* Coloca o jogo da velha em cima da animação */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 0 auto; /* Remove o espaçamento do topo */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    color: #333;
+    transition: background-color 0.2s ease;
+    user-select: none; /* Impede a seleção de texto */
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.cell.x {
+    background-color: #f0f0f0;
+    color: #333; /* Cor do 'X' */
+    font-weight: bold;
+}
+
+.cell.o {
+    background-color: #f0f0f0;
+    color: #333; /* Cor do 'O' */
+    font-weight: bold;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+#player-turn {
+    font-weight: bold;
+}
+
+#game-status {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#reset-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#reset-button:hover {
+    background-color: #45a049;
+}
