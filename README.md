@@ -32,14 +32,5 @@ Preparado para a batalha? ⚔️ Acesse o código e divirta-se! 🎉
 
 [[Link para o código do GitHub]](https://github.com/Almerindop2p/jogo-da-velha-github/)
 
-Observações:
+[link da preview](https://theslex.com.br/jogo_da_velha/public_html/)
 
-O README.md pode incluir outras informações como:
-
-Instruções de instalação caso a aplicação tenha dependências
-
-Créditos para outras pessoas que colaboraram no projeto
-
-Links para outras páginas ou recursos relevantes
-
-Espero que isso ajude! 🚀
